@@ -29,25 +29,35 @@ a:hover { text-decoration: underline; }
   letter-spacing: 1px;
 }
 .logo span { color: #e0574a; }
+#nav { display: flex; align-items: center; gap: 16px; }
 #nav a {
-  margin-left: 16px;
   color: #c7c7cb;
   font-size: 13px;
   text-transform: uppercase;
   letter-spacing: .5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 #nav a:hover { color: #e0574a; text-decoration: none; }
+.nav-user { text-transform: none !important; }
 
 main.wrap { padding: 24px 16px 48px; min-height: 60vh; }
 
-h1 { font-size: 20px; color: #f0f0f0; margin: 0 0 16px; }
+h1 { font-size: 20px; color: #f0f0f0; margin: 0 0 8px; }
+h2 { font-size: 16px; color: #f0f0f0; margin: 28px 0 10px; border-top: 1px solid #232429; padding-top: 20px; }
 
 .muted { color: #85858c; }
 .small { font-size: 12px; }
 
+.empty-state { text-align: center; padding: 48px 16px; }
+.empty-state .btn { margin-top: 12px; }
+
 .crumbs { font-size: 12px; color: #85858c; margin-bottom: 12px; }
 .crumbs a { color: #85858c; }
 .crumbs a:hover { color: #e0574a; }
+
+.perm-note { color: #c98a3a; margin-top: 2px; }
 
 table.board {
   width: 100%;
@@ -68,17 +78,21 @@ table.board th {
 table.board td {
   padding: 10px 12px;
   border-bottom: 1px solid #242529;
-  vertical-align: top;
+  vertical-align: middle;
 }
 table.board tr:last-child td { border-bottom: none; }
 table.board tr:hover td { background: #202126; }
 .cat-link { font-size: 15px; font-weight: 600; }
+.admin-table { margin-bottom: 8px; }
+.admin-table select { background: #101114; color: #e6e6e8; border: 1px solid #2f3036; padding: 4px 6px; }
 
 .panel-head {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 12px;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .btn {
@@ -93,6 +107,20 @@ table.board tr:hover td { background: #202126; }
 }
 .btn:hover { background: #c94238; text-decoration: none; }
 
+.btn-mini {
+  background: #26272d;
+  color: #d7d7da;
+  border: 1px solid #34353c;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.btn-mini:hover { background: #303139; }
+.btn-danger { border-color: #b8352c; color: #e0574a; }
+.btn-danger:hover { background: #2a1a19; }
+.mod-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+
 .panel {
   background: #1b1c21;
   border: 1px solid #2a2b31;
@@ -104,7 +132,7 @@ table.board tr:hover td { background: #202126; }
   max-width: 640px;
 }
 .panel.narrow { max-width: 360px; }
-.panel label { font-size: 12px; color: #9c9ca3; text-transform: uppercase; }
+.panel label { font-size: 12px; color: #9c9ca3; text-transform: uppercase; margin-top: 4px; }
 .panel input, .panel select, .panel textarea {
   background: #101114;
   border: 1px solid #2f3036;
@@ -113,10 +141,22 @@ table.board tr:hover td { background: #202126; }
   font-family: inherit;
   font-size: 14px;
 }
-.panel textarea { min-height: 120px; resize: vertical; }
+.panel textarea { min-height: 110px; resize: vertical; }
 .panel .btn { align-self: flex-start; margin-top: 4px; }
 
 .error { color: #e0574a; font-size: 13px; min-height: 16px; }
+
+.toolbar { display: flex; gap: 4px; flex-wrap: wrap; }
+.toolbar button {
+  background: #101114;
+  border: 1px solid #2f3036;
+  color: #c7c7cb;
+  padding: 5px 9px;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.toolbar button:hover { background: #1c1d22; color: #fff; }
 
 .posts { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
 .post {
@@ -129,10 +169,49 @@ table.board tr:hover td { background: #202126; }
   padding: 12px;
   border-right: 1px solid #2a2b31;
   font-weight: 600;
+  text-align: center;
 }
+.post-author a { display: flex; flex-direction: column; align-items: center; gap: 6px; color: #e6e6e8; }
+.post-author a:hover { text-decoration: none; color: #e0574a; }
 .post-body { padding: 12px; }
-.post-date { margin-bottom: 6px; }
-.post-content { white-space: pre-wrap; word-break: break-word; }
+.post-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.post-content p { margin: 0 0 8px; }
+.post-content p:last-child { margin-bottom: 0; }
+.post-content blockquote {
+  margin: 0 0 8px; padding: 6px 10px;
+  border-left: 3px solid #b8352c;
+  background: #202126;
+  color: #a9a9b0;
+}
+.post-content ul { margin: 0 0 8px; padding-left: 20px; }
+.post-content code { background: #26272d; padding: 1px 6px; border-radius: 2px; font-family: 'Consolas', monospace; }
+.post-signature { margin-top: 10px; padding-top: 8px; border-top: 1px dashed #2a2b31; color: #85858c; font-size: 12px; font-style: italic; }
+
+.role-badge {
+  display: inline-block;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  padding: 2px 7px;
+  border-radius: 2px;
+  font-weight: 700;
+  margin: 4px 0;
+}
+.role-user { background: #26272d; color: #9c9ca3; }
+.role-moderator { background: #2a3a4a; color: #6fb3e0; }
+.role-admin { background: #4a2323; color: #e0574a; }
+
+.avatar-img { border-radius: 3px; object-fit: cover; display: block; }
+.avatar-fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #232429;
+  border: 1px solid #2a2b31;
+  color: #e0574a;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
 
 .profile-card {
   display: flex;
@@ -141,21 +220,12 @@ table.board tr:hover td { background: #202126; }
   border: 1px solid #2a2b31;
   padding: 20px;
 }
-.avatar {
-  width: 72px;
-  height: 72px;
-  background: #232429;
-  border: 1px solid #2a2b31;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  color: #e0574a;
-  flex-shrink: 0;
-  overflow: hidden;
-}
-.avatar img { width: 100%; height: 100%; object-fit: cover; }
-.bio { margin: 8px 0 0; }
+.profile-contacts { display: flex; gap: 16px; margin-top: 8px; font-size: 13px; color: #b8b8be; }
+.profile-signature { margin-top: 8px; font-style: italic; color: #9c9ca3; font-size: 13px; }
+.bio { margin: 12px 0 0; }
+.bio p { margin: 0 0 6px; }
+
+.avatar-edit-row { display: flex; align-items: center; gap: 14px; }
 
 .site-footer {
   border-top: 1px solid #232429;
@@ -167,5 +237,6 @@ table.board tr:hover td { background: #202126; }
 
 @media (max-width: 640px) {
   .post { grid-template-columns: 1fr; }
-  .post-author { border-right: none; border-bottom: 1px solid #2a2b31; }
+  .post-author { border-right: none; border-bottom: 1px solid #2a2b31; flex-direction: row; justify-content: flex-start; }
+  .post-author a { flex-direction: row; }
 }
