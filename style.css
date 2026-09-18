@@ -1,5 +1,18 @@
 * { box-sizing: border-box; }
 
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #16151c;
+  color: #d9d7df;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
 a {
   color: #6fa3df;
   text-decoration: none;
