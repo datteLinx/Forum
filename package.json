@@ -1,0 +1,12 @@
+{
+  "name": "gta-forum",
+  "version": "1.0.0",
+  "description": "Простой форум для GTA-сервера: регистрация, категории, темы, профиль",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
