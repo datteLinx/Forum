@@ -13,10 +13,7 @@ html {
 }
 
 body {
-  background:
-    radial-gradient(circle at 15% -10%, rgba(70, 105, 170, .10), transparent 32%),
-    radial-gradient(circle at 90% 0%, rgba(120, 82, 180, .08), transparent 28%),
-    #111216;
+  background: #111216;
   color: #d9dbe1;
   font-family: "Segoe UI", Arial, sans-serif;
   font-size: 14px;
@@ -25,20 +22,18 @@ body {
 }
 
 ::selection {
-  background: rgba(91, 132, 205, .35);
+  background: #3d587c;
   color: #fff;
 }
 
 a {
-  color: #7ea9e8;
+  color: #78a6df;
   text-decoration: none;
-  transition:
-    color .18s ease,
-    opacity .18s ease;
+  transition: color .18s ease;
 }
 
 a:hover {
-  color: #a7c6f3;
+  color: #9bbced;
   text-decoration: none;
 }
 
@@ -54,8 +49,7 @@ button {
     background .18s ease,
     border-color .18s ease,
     color .18s ease,
-    transform .12s ease,
-    box-shadow .18s ease;
+    transform .12s ease;
 }
 
 .wrap {
@@ -64,18 +58,16 @@ button {
   margin: 0 auto;
 }
 
-/* ========================================
-   HEADER
-======================================== */
+/* HEADER */
 
 .site-header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(14, 15, 19, .88);
-  border-bottom: 1px solid #292c35;
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  background: rgba(14, 15, 19, .96);
+  border-bottom: 1px solid #292d35;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 .header-inner {
@@ -98,7 +90,7 @@ button {
 }
 
 .logo span {
-  color: #7ea9e8;
+  color: #78a6df;
 }
 
 #nav {
@@ -129,9 +121,7 @@ button {
   text-transform: none !important;
 }
 
-/* ========================================
-   MAIN
-======================================== */
+/* MAIN */
 
 main.wrap {
   min-height: 65vh;
@@ -197,9 +187,7 @@ h2 {
   font-size: 12px;
 }
 
-/* ========================================
-   BOARD / TABLE
-======================================== */
+/* TABLE */
 
 table.board {
   width: 100%;
@@ -209,9 +197,7 @@ table.board {
   border-collapse: separate;
   border-spacing: 0;
   background: #181a1f;
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, .16),
-    0 1px 0 rgba(255, 255, 255, .02) inset;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .16);
 }
 
 table.board th {
@@ -267,9 +253,7 @@ table.board tr:hover td {
   color: #e1e3e8;
 }
 
-/* ========================================
-   PANEL HEADER
-======================================== */
+/* PANEL HEADER */
 
 .panel-head {
   display: flex;
@@ -280,9 +264,7 @@ table.board tr:hover td {
   margin-bottom: 16px;
 }
 
-/* ========================================
-   BUTTONS
-======================================== */
+/* BUTTONS */
 
 .btn {
   display: inline-flex;
@@ -290,16 +272,9 @@ table.board tr:hover td {
   justify-content: center;
   min-height: 36px;
   padding: 8px 15px;
-  border: 1px solid #5d7eb5;
+  border: 1px solid #587aa9;
   border-radius: 8px;
-  background: linear-gradient(
-    135deg,
-    #5279b4,
-    #665b9e
-  );
-  box-shadow:
-    0 5px 16px rgba(65, 94, 145, .16),
-    0 1px 0 rgba(255, 255, 255, .08) inset;
+  background: #4d6f9f;
   color: #fff;
   font-size: 13px;
   font-weight: 600;
@@ -307,15 +282,8 @@ table.board tr:hover td {
 }
 
 .btn:hover {
-  border-color: #7898ce;
-  background: linear-gradient(
-    135deg,
-    #6089c7,
-    #7568b1
-  );
-  box-shadow:
-    0 7px 20px rgba(76, 107, 165, .22),
-    0 1px 0 rgba(255, 255, 255, .1) inset;
+  border-color: #7195c8;
+  background: #5a80b5;
   color: #fff;
   text-decoration: none;
 }
@@ -362,9 +330,7 @@ table.board tr:hover td {
   flex-wrap: wrap;
 }
 
-/* ========================================
-   PANELS / FORMS
-======================================== */
+/* PANELS */
 
 .panel {
   display: flex;
@@ -375,15 +341,8 @@ table.board tr:hover td {
   padding: 20px;
   border: 1px solid #2b2f37;
   border-radius: 12px;
-  background:
-    linear-gradient(
-      145deg,
-      rgba(31, 34, 41, .96),
-      rgba(24, 26, 31, .96)
-    );
-  box-shadow:
-    0 12px 35px rgba(0, 0, 0, .14),
-    0 1px 0 rgba(255, 255, 255, .025) inset;
+  background: #191b20;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .14);
 }
 
 .panel.narrow {
@@ -413,8 +372,7 @@ table.board tr:hover td {
   font-size: 14px;
   transition:
     border-color .18s ease,
-    box-shadow .18s ease,
-    background .18s ease;
+    box-shadow .18s ease;
 }
 
 .panel input:hover,
@@ -427,7 +385,6 @@ table.board tr:hover td {
 .panel select:focus,
 .panel textarea:focus {
   border-color: #587aa9;
-  background: #14171c;
   box-shadow: 0 0 0 3px rgba(84, 119, 169, .12);
 }
 
@@ -447,9 +404,7 @@ table.board tr:hover td {
   font-size: 13px;
 }
 
-/* ========================================
-   TOOLBAR
-======================================== */
+/* TOOLBAR */
 
 .toolbar {
   display: flex;
@@ -473,9 +428,7 @@ table.board tr:hover td {
   color: #e8eaf0;
 }
 
-/* ========================================
-   POSTS
-======================================== */
+/* POSTS */
 
 .posts {
   display: flex;
@@ -491,9 +444,7 @@ table.board tr:hover td {
   border: 1px solid #292d35;
   border-radius: 12px;
   background: #181a1f;
-  box-shadow:
-    0 7px 24px rgba(0, 0, 0, .10),
-    0 1px 0 rgba(255, 255, 255, .018) inset;
+  box-shadow: 0 7px 24px rgba(0, 0, 0, .10);
   transition:
     border-color .18s ease,
     background .18s ease;
@@ -507,7 +458,7 @@ table.board tr:hover td {
 .post-author {
   padding: 17px 13px;
   border-right: 1px solid #292d35;
-  background: rgba(24, 26, 31, .65);
+  background: #17191e;
   text-align: center;
   font-weight: 600;
 }
@@ -577,9 +528,7 @@ table.board tr:hover td {
   font-style: italic;
 }
 
-/* ========================================
-   ROLE BADGES
-======================================== */
+/* ROLES */
 
 .role-badge {
   display: inline-flex;
@@ -610,9 +559,7 @@ table.board tr:hover td {
   color: #b496d4;
 }
 
-/* ========================================
-   AVATARS
-======================================== */
+/* AVATARS */
 
 .avatar-img {
   display: block;
@@ -631,9 +578,7 @@ table.board tr:hover td {
   color: #759ed8;
 }
 
-/* ========================================
-   PROFILE
-======================================== */
+/* PROFILE */
 
 .profile-card {
   display: flex;
@@ -641,15 +586,8 @@ table.board tr:hover td {
   padding: 22px;
   border: 1px solid #2b2f37;
   border-radius: 13px;
-  background:
-    linear-gradient(
-      145deg,
-      #1c1f25,
-      #181a1f
-    );
-  box-shadow:
-    0 14px 38px rgba(0, 0, 0, .15),
-    0 1px 0 rgba(255, 255, 255, .025) inset;
+  background: #1a1c21;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, .15);
 }
 
 .profile-contacts {
@@ -681,9 +619,7 @@ table.board tr:hover td {
   gap: 15px;
 }
 
-/* ========================================
-   FOOTER
-======================================== */
+/* FOOTER */
 
 .site-footer {
   padding: 20px 0;
@@ -693,9 +629,7 @@ table.board tr:hover td {
   text-align: center;
 }
 
-/* ========================================
-   MOBILE
-======================================== */
+/* MOBILE */
 
 @media (max-width: 720px) {
   .wrap {
