@@ -515,3 +515,20 @@ table.board tr:hover td {
     flex-direction: row;
   }
 }
+
+@media (max-width: 640px) {
+  .post {
+    grid-template-columns: 1fr;
+  }
+
+  .post-author {
+    border-right: none;
+    border-bottom: 1px solid #302b3a;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .post-author a {
+    flex-direction: row;
+  }
+}
