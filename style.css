@@ -1,3 +1,5 @@
+* { box-sizing: border-box; }
+
 a {
   color: #6fa3df;
   text-decoration: none;
